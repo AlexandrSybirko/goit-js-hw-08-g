@@ -2,7 +2,7 @@ import galleryItems from './gallery-items.js';
 
 
 const refs = {
-  galleryList: document.querySelector('.js-gallery'),
+  gallery: document.querySelector('.js-gallery'),
   modal: document.querySelector('.js-lightbox'),
   modalBtnClose: document.querySelector('button[data-action="close-lightbox"]'),
   modalImage: document.querySelector('.lightbox__image'),
@@ -10,7 +10,7 @@ const refs = {
 };
 
 const galleryMarkup = createGallery(galleryItems);
-refs.galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+refs.gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
 function createGallery(e) {
   return e
@@ -34,7 +34,7 @@ function createGallery(e) {
     .join('');
 }
 
-refs.galleryList.addEventListener('click', modalOpen);
+refs.gallery.addEventListener('click', modalOpen);
 
 function modalOpen(evt) {
   if (evt.target.nodeName !== 'IMG') {
